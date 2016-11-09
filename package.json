@@ -4,7 +4,6 @@
   "description": "service spektr business site",
   "main": "gulpfile.js",
   "dependencies": {
-    "browser-sync": "^2.12.12",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-imagemin": "^3.0.1",
     "gulp": "^3.9.1",

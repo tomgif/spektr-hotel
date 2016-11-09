@@ -1,3 +1,3 @@
-//= slick.js
+//= fotorama.js
 
 //= partials/app.js
