@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 html(lang="en")
-	head
-		meta(charset="UTF-8")
-		title Document
-		link(rel="stylesheet", href="css/main.css")
+	include include/head
 	body.b-page
-		.b-header
-			a.b-header__logo.b-logo.b-logo--top(href="/")
-				img.b-logo__image(src="img/logo.svg", alt="Spektr Hotel Bodrum")
-			ul.b-header__menu.b-menu.b-menu--top
-				li.b-menu__item: a.b-menu__link(href="#"): span Hotel
-				li.b-menu__item: a.b-menu__link(href="#"): span Rooms
-				li.b-menu__item: a.b-menu__link(href="#"): span Restaurants &amp; Bars
-				li.b-menu__item: a.b-menu__link(href="#"): span Services
-				li.b-menu__item: a.b-menu__link(href="#"): span Bodrum Peninsula
-				li.b-menu__item: a.b-menu__link(href="#"): span Gallery
-				li.b-menu__item: a.b-menu__link(href="#"): span Address &amp; Contacts
-			.b-lang
-			.b-contact
-			a.b-ribbon(href="javascript:void(0)")
-				.b-ribbon__item
+		include include/header
 		.b-content
 			.b-content__wrapper
 				.b-logo.b-logo--mini: include img/logo-mini.svg
-				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam cupiditate excepturi maxime! Nam voluptate, expedita ab alias, aut facilis id repellat vel placeat quae dignissimos consequuntur non! Dolorum recusandae quis architecto non quidem expedita ex, nesciunt neque, amet ipsa magnam, tempora quo. Perferendis aliquid fuga non tenetur, cupiditate magnam blanditiis.
-			.b-content__footer
-				p &copy; 2016 Spektr Hotel Bodrum <br> Copy and partial use of materials displayed on the site shall be approved by the site administrator
+				a.b-book(href="#", target="_blank"): span Reservations
+				hr
+				.b-slide.js-slide
+					.b-slide__content.js-scrollbar
+						h2 Spektr Hotel Bodrum
+						.b-slide__text 
+							p Dear guest, <br>Welcome to Spektr Hotel Bodrum, where your luxurious wellbeing is our favorite job.
+							p Spektr Hotel Bodrum opened its doors to offer a unique, private and unforgettable hotel experience to every guest, year round.
+							p Here you have a selection of 35 sea view guestrooms in various categories - standard, deluxe, family and suite. All rooms are designed in a modern European yet Mediterranean style with state of the art equipment and facilities. On the grounds of Spektr Hotel Bodrum you will find four beautiful gardens and pools, as well as a French fusion restaurant La Colline for the food gourmets and an authentic wine &amp; lounge bar PODVAL for the wine lovers. Podval can also easily be transformed into a conference and meeting room. In addition, Spektr Hotel Bodrum is one of the few hotels in Yalikavak that has a private beach at the bottom of Gerish hill.
+							p From the top of Gerish, you have the perfect view of Yalikavak city center. The main attraction of this up and coming luxury town is the world renowned Palmarina with its deluxe infrastructure for visitors coming by both land and sea. The Yalikavak seashore offers many private and public beaches as well as chic and trendy beach clubs. Moreover, Yalikavak has become an essential arts and crafts center with famous art galleries (Mine, My Art, Yalikavak Art gallery) and unique local ateliers all over town. The main restaurant street by the waterfront offers delicious Turkish cuisine by traditional family run restaurants that are part of Bodrum’s history.
+							p Spektr Hotel Bodrum is the newest proud member of the international Spektr Hotel Group. As the third hotel in the group of city business accommodations, Spektr Hotel Bodrum is a boutique hotel that is business and leisure oriented. Our hotel is in total support of sustainable tourism therefore, it is run to 80% on solar energy. All the carefully selected materials of the hotel are locally sourced and in addition, we recycle!
+							p All in all Spektr Hotel Bodrum guarantees a carefree stay. Let us show you hospitality, unique style and excellence.
+							p Your luxurious wellbeing is our favorite job!
+						h2 Our Standards
+						.b-slide__text
+							p Each of our 35 sea view guest rooms comes with everything you need for a delightful stay at Spektr Hotel Bodrum. Enjoy the comfort of a large room with a king size double or twin bed, free Wi-Fi, desk for dining or work, in-room safe, floor heating, well-stocked minibar, walk-in closet, private terrace or garden access and flatscreen TV.
+							p All rooms are spacious and stylish in every detail. Moreover the stunning view of Yalikavak Bay will take your breath away, be it while watching the sunrise with a coffee, sunset with a glass of wine or a storm with a cup of hot chocolate.
+						h2 Bars &amp; Restaurants
+						.b-slide__text
+							p Spektr Hotel Bodrum has three different food and beverage outlets offering unique culinary experiences. LA COLLINE - a panoramic restaurant located on the terrace of the hotel, GUSTO – a traditional seaside fish restaurant with private beach and PODVAL – a wine bar and lounge offering an extensive wine selection and diverse Turkish and modern European cuisine. All ingredients are organic and carefully chosen from local suppliers.
+							p Our guests make use of a free shuttle service that can bring you to the seaside restaurant street where GUSTO is located, as well as to the Palmarina where you can visit numerous world famous restaurant brands.
+					.b-more: a.b-more__link.js-more(href="javascript:void(0)"): include img/arrow.svg
+			include footer
 		.b-slider.fotorama(data-width="100%", data-height="100%", data-autoplay="4000", data-loop="true" data-transition="dissolve", data-transitionduration="1000", data-arrows="false")
 			.b-slider__item(style="background-image: url(img/1.jpg)") &nbsp;
 			.b-slider__item(style="background-image: url(img/2.jpg)") &nbsp;

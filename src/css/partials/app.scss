@@ -7,6 +7,8 @@ html, body {
 html {
 	font-size: 100%;
 	font-family: MyriadProRegular, sans-serif;
+
+	@media all and (max-width: 1366px) {font-size: 100%}
 }
 
 body {
@@ -14,6 +16,8 @@ body {
 	margin: 0;
 	overflow: hidden;
 	background-color: #222;
+
+	@media all and (max-width: 1366px) {font-size: 14px}
 }
 
 .b-header {
@@ -21,6 +25,10 @@ body {
 	position: relative;
 	height: 5em;
 	z-index: 10;
+	transform: translateY(0);
+	transition: transform .3s ease;
+
+	.is-full & {transform: translateY(-5em)}
 }
 
 .b-logo {
@@ -95,13 +103,36 @@ body {
 			}
 		}
 	}
+
+	&__border {
+		position: absolute;
+		bottom: 1.85em;
+		left: 0;
+		overflow: visible !important;
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 1em;
+			height: 1em;
+			background: #fff;
+			left: 0;
+			right: 0;
+			margin: auto;
+			transform: rotate(45deg);
+			box-shadow: 1px 1px 0 0 #405B79, 2px 2px 0 0 #BFC8D2;
+		}
+	}
 }
 
 .b-ribbon {
 	position: absolute;
     right: 3em;
-    top: 100%;
+    top: 90%;
     z-index: 5;
+    transform: translateY(0);
+    transition: transform .3s ease;
 
     &__item {
     	float: left;
@@ -124,7 +155,18 @@ body {
 
 	    &:before {border-right: 1.5em solid transparent}
 	    &:after {border-left: 1.5em solid transparent}
+
+	    svg {
+	    	fill: #222;
+	    	margin-top: .4em;
+	    }
     }
+
+    &:hover {transform: translateY(.25em)}
+
+   	.is-full & {
+   		svg {transform: scale(-1)}
+   	}
 }
 
 .b-content {
@@ -137,10 +179,19 @@ body {
 	background-color: rgba(15,39,66,.6);
 	padding: 6em 2.5em;
 	color: $white;
+	transform: translateX(0);
+	transition: transform .3s ease;
+
+	.is-full & {transform: translateX(-24em)}
 
 	&__wrapper {
 		@include fullsize();
 		position: relative;
+
+		hr {
+			border-style: solid;
+    		border-color: #fff;
+		}
 	}
 
 	&__footer {
@@ -166,5 +217,125 @@ body {
 		background-position: center top;
 		background-repeat: no-repeat;
 		background-size: cover;
+	}
+}
+
+.b-book {
+	display: block;
+	text-decoration: none;
+	border: 2px solid $white;
+	padding: 1em;
+	transition: background .3s ease;
+	border-radius: .75em;
+	margin-top: 1em;
+	margin-bottom: 2em; 
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	color: $white;
+
+	background-color: rgba(70,152,66,.6); /* избавиться */
+
+	span {font-size: 1.125rem}
+}
+
+.b-slide {
+
+	&.is-visible {
+		@include fullsize();
+
+		padding-bottom: 7.5em;
+	}
+
+	&__content {
+		h2 {
+			font-size: 1.125rem;
+			font-weight: normal;
+			text-transform: uppercase;
+			cursor: pointer;
+
+			&:hover {text-decoration: underline}
+		}
+
+		.is-visible &{
+			@include fullsize();
+		}
+	}
+
+	&__text {
+		display: none;
+
+		.is-visible &{display: block}
+
+		p {
+			font-size: .875rem;
+			line-height: 1rem;
+			text-indent: 1em;
+		}
+	}
+}
+
+.b-more {
+	width: 100%;
+	position: relative;
+	text-align: right;
+	padding-right: 10%;
+
+	&__link{
+
+		svg {
+			display: inline-block;
+			fill: $white;
+			width: 2em;
+			transform: scale(-1);
+			border-radius: .5em;
+			padding: 0 .25em;
+			border: 2px solid $white;
+			cursor: pointer;
+
+			&:hover {background-color: rgba(51,112,48,.6)}
+
+			.is-visible & {transform: scale(1)}
+		}
+
+		&:before, &:after {
+			content: "";
+			border-top: 2px solid $white;
+			position: absolute;
+			z-index: 5;
+			display: block;
+		    top: -.9em;
+		    margin: auto;
+		    bottom: 0;
+		    height: 0;
+
+		    .is-visible & {
+		    	bottom: -1.3em;
+		    }
+		}
+		&:before {
+			left: 0;
+			width: 81.5%;
+		}
+		&:after {
+			right: 0;
+			width: 12%;
+		}
+	}
+}
+
+.b-social {
+	&__item {
+		text-decoration: none;
+
+		svg {
+			width: 1em;
+			height: 1em;
+			fill: $white;
+			opacity: .4;
+			transition: opacity .3s ease;
+
+			&:hover {opacity: 1}
+		}
 	}
 }
