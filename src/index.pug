@@ -2,12 +2,13 @@
 html(lang="en")
 	include include/head
 	body.b-page
+		- var activeItem = 0
 		include include/header
 		.b-content
 			.b-content__wrapper
 				.b-logo.b-logo--mini: include img/logo-mini.svg
 				a.b-book(href="#", target="_blank"): span Reservations
-				hr
+				| <hr>
 				.b-slide.js-slide
 					.b-slide__content.js-scrollbar
 						h2 Spektr Hotel Bodrum
@@ -27,8 +28,14 @@ html(lang="en")
 						.b-slide__text
 							p Spektr Hotel Bodrum has three different food and beverage outlets offering unique culinary experiences. LA COLLINE - a panoramic restaurant located on the terrace of the hotel, GUSTO – a traditional seaside fish restaurant with private beach and PODVAL – a wine bar and lounge offering an extensive wine selection and diverse Turkish and modern European cuisine. All ingredients are organic and carefully chosen from local suppliers.
 							p Our guests make use of a free shuttle service that can bring you to the seaside restaurant street where GUSTO is located, as well as to the Palmarina where you can visit numerous world famous restaurant brands.
-					.b-more: a.b-more__link.js-more(href="javascript:void(0)"): include img/arrow.svg
-			include footer
+					.b-slide__foot
+						a.b-slide__more.js-more(href="javascript:void(0)"): include img/arrow.svg
+				.b-weather.b-weather--content.js-weather
+					.b-weather__title Weather in Bodrum
+					i.wi.wi-day-sunny
+					span.b-weather__degree +17 °С <br>
+					span.b-weather__date Friday, 11.11.2016 10:43
+			include include/footer
 		.b-slider.fotorama(data-width="100%", data-height="100%", data-autoplay="4000", data-loop="true" data-transition="dissolve", data-transitionduration="1000", data-arrows="false")
 			.b-slider__item(style="background-image: url(img/1.jpg)") &nbsp;
 			.b-slider__item(style="background-image: url(img/2.jpg)") &nbsp;

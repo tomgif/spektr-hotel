@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+html(lang="en")
+	include include/head
+	body.b-page
+		- var activeItem = 6
+		include include/header
+		.b-content
+			.b-content__wrapper
+				.b-logo.b-logo--mini: include img/logo-mini.svg
+				a.b-book(href="#", target="_blank"): span Reservations
+				| <hr>
+			include include/footer
+		.b-slider.fotorama(data-width="100%", data-height="100%", data-autoplay="4000", data-loop="true" data-transition="dissolve", data-transitionduration="1000", data-arrows="false")
+			.b-slider__item(style="background-image: url(img/1.jpg)") &nbsp;
+			.b-slider__item(style="background-image: url(img/2.jpg)") &nbsp;
+			.b-slider__item(style="background-image: url(img/3.jpg)") &nbsp;
+			.b-slider__item(style="background-image: url(img/4.jpg)") &nbsp;
+			.b-slider__item(style="background-image: url(img/5.jpg)") &nbsp;
+			.b-slider__item(style="background-image: url(img/6.jpg)") &nbsp;
+			.b-slider__item(style="background-image: url(img/7.jpg)") &nbsp;
+			.b-slider__item(style="background-image: url(img/8.jpg)") &nbsp;
+			.b-slider__item(style="background-image: url(img/9.jpg)") &nbsp;
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+		script(src="js/main.js")

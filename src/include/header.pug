@@ -1,15 +1,25 @@
 .b-header
-	a.b-header__logo.b-logo.b-logo--top(href="/")
-		img.b-logo__image(src="../img/logo.svg", alt="Spektr Hotel Bodrum")
-	ul.b-header__menu.b-menu.b-menu--top
-		li.b-menu__item.is-selected: a.b-menu__link(href="#"): span Hotel
-		li.b-menu__item: a.b-menu__link(href="#"): span Rooms
-		li.b-menu__item: a.b-menu__link(href="#"): span Restaurants &amp; Bars
-		li.b-menu__item: a.b-menu__link(href="#"): span Services
-		li.b-menu__item: a.b-menu__link(href="#"): span Bodrum Peninsula
-		li.b-menu__item: a.b-menu__link(href="#"): span Gallery
-		li.b-menu__item: a.b-menu__link(href="#"): span Address &amp; Contacts
-	.b-lang
-	.b-contact
-	a.b-ribbon.js-fullscreen(href="javascript:void(0)")
-		.b-ribbon__item: include ../img/arrow.svg
+	.b-header__left
+		a.b-logo.b-logo--top(href="/")
+			img.b-logo__image(src="../img/logo.svg", alt="Spektr Hotel Bodrum")
+		nav.b-nav
+			ul.b-menu.b-menu--top
+				- var nav = [{url: "./", text: "Hotel"}, {url: "./rooms.html", text: "Rooms"}, {url: "./restaurants.html", text: "Restaurants & Bars"}, {url: "./services.html", text: "Services"}, {url: "./resort.html", text: "Bodrum Peninsula"}, {url: "./gallery.html", text: "Gellery"}, {url: "./contacts.html", text: "Address & Contacts"}]
+				each el, key in nav
+					- var c;
+					- el.class = (activeItem == key) ? " is-selected" : "";
+					li.b-menu__item(class=el.class): a.b-menu__link(href=el.url): span= el.text
+	.b-header__right
+		.b-header__weather.b-weather.b-weather--top
+			i.wi.wi-day-sunny
+			span.b-weather__degree +17 °С
+		.b-lang
+			a.b-lang__item.b-lang__item--tr(href="#") &nbsp;
+			a.b-lang__item.b-lang__item--en(href="#") &nbsp;
+			a.b-lang__item.b-lang__item--ru(href="#") &nbsp;
+		.b-contact
+			a.b-contact__item(href="/contacts/#map"): include ../img/logo-mini.svg
+			a.b-contact__item.has-tooltip(href="callto:+902523852020", title="+902523852020"): i.fa.fa-phone(aria-hidden="true")
+			a.b-contact__item.has-tooltip(href="mailto:info@spektr-hotel.com", title="info@spektr-hotel.com"): i.fa.fa-envelope-o(aria-hidden="true")
+		a.b-ribbon.js-fullscreen(href="javascript:void(0)")
+			.b-ribbon__item: include ../img/arrow.svg

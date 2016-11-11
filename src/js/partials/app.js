@@ -46,6 +46,10 @@
 
 		magicLine.init();
 
+		if ($('.has-tooltip').length > 0) {
+			Tipped.create('.has-tooltip');
+		}
+
 		$(".js-scrollbar").mCustomScrollbar({
 			theme: "rounded-dark",
 			mouseWheelPixels: 200,
@@ -70,7 +74,7 @@
 				});
 			}else{
 				$('.js-slide').removeClass('is-hidden');
-				$('.js-footer, .weather--content').fadeIn();
+				$('.js-footer, .js-weather').fadeIn();
 			}
 		});
 
